@@ -6,23 +6,26 @@
 A simple and modular AutoML graphical user interface application designed to help users easily train, test, and evaluate machine learning models. Sentino3 supports importing external models, managing datasets, tuning hyperparameters, and visualizing results, making AutoML accessible for both beginners and advanced users.
 # Sentino3 - AutoML GUI (Test Version)
 
-🎯 Key Features:
-
-- ✅ **Model selection**  
+  Key Features:
+  **Model selection**  
   Choose from built-in machine learning models (SVM, k-NN, Decision Tree, etc.)
 
-- ⚙️ **Custom hyperparameters**  
+  **Custom hyperparameters**  
   Enter and apply parameters in the format: `key: value`, one per line
 
   **Dataset loading**  
   Load CSV files or use preloaded sample datasets
+
   **Run options**  
   Quick Run: Basic evaluation (accuracy)
   Deep Run: Advanced evaluation with metrics and plots
+
   **Label distribution chart**  
   Visualize label frequency in a simple bar chart
+
   **Train-test split and k-Fold options**  
   Easily configure the data splitting method before training
+
   **Data normalization toggle**  
   Choose whether to normalize your dataset before training
 
