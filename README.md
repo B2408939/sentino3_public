@@ -1,12 +1,12 @@
+> **Challenge: This entire project was built solely through conversations with ChatGPT.**  
+> No external documentation, no Stack Overflow, no help from other people.  
+> Every line of code, every design decision, and every feature idea came from chatting with AI – step by step.
+
 # sentino3_public
 A simple and modular AutoML graphical user interface application designed to help users easily train, test, and evaluate machine learning models. Sentino3 supports importing external models, managing datasets, tuning hyperparameters, and visualizing results, making AutoML accessible for both beginners and advanced users.
 # Sentino3 - AutoML GUI (Test Version)
 
-**Sentino3** is a lightweight AutoML graphical user interface designed to help users train, test, and evaluate machine learning models without writing code.  
-The `/Test/` folder contains the initial prototype version of the system.
-
 This code was co-developed with the assistance of **ChatGPT (OpenAI - GPT-4o)**.
-
 ---
 <pre>
 Folder Structure
