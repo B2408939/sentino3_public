@@ -8,7 +8,7 @@ The `/Test/` folder contains the initial prototype version of the system.
 This code was co-developed with the assistance of **ChatGPT (OpenAI - GPT-4o)**.
 
 ---
-
+<pre>
 Folder Structure
 /Test/
 │
@@ -24,10 +24,9 @@ Folder Structure
 ├── model_runner.py # Core logic for model training and evaluation
 ├── state.py # Global variables and shared application state
 └── utils.py # Hyperparameter parsing and other helper functions
+</pre>
 
----
-
-## 🚀 How to Run
+## How to Run
 
 1. **Clone the repository** or download the `/Test/` folder.
 2. **Install dependencies** (if not already installed):
