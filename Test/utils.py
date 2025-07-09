@@ -6,11 +6,11 @@ def parse_params_from_text(text):
     result = {}
     for line in lines:
         if ":" not in line:
-            raise ValueError(f"Dòng thiếu dấu ':' → {line}")
+            raise ValueError(f"Missing separator symbol ':' → {line}")
         key, val = map(str.strip, line.split(":", 1))
         try:
             val = ast.literal_eval(val)
         except:
-            val = val  # để nguyên chuỗi nếu không ép được
+            val = val 
         result[key] = val
     return result
