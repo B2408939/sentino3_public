@@ -38,7 +38,7 @@ def load_sample_data(name):
         })
         df["target_name"] = [data.target_names[i] for i in data.target]
     else:
-        messagebox.showerror("Lỗi", "Dataset không hợp lệ")
+        messagebox.showerror("Error", "Invalid dataset")
         return None
 
     state.df = df
@@ -47,10 +47,9 @@ def load_sample_data(name):
 
 def show_class_distribution():
     if state.df is None or state.df.empty:
-        messagebox.showwarning("Chưa có dữ liệu", "Bạn chưa chọn file CSV hoặc dữ liệu trống.")
+        messagebox.showwarning("No data available", "No CSV file selected or the datasets is empty")
         return
 
-    # Ưu tiên vẽ bằng "target_name" nếu có
     if "target_name" in state.df.columns:
         target_col = "target_name"
     elif "target" in state.df.columns:
@@ -63,14 +62,14 @@ def show_class_distribution():
                 break
 
     if not target_col:
-        messagebox.showwarning("Không tìm thấy nhãn", "Không có cột nào phù hợp làm nhãn.")
+        messagebox.showwarning("No labels found.", "No suitable column detected as label.")
         return
 
     plt.figure(figsize=(8, 5))
     sns.countplot(x=state.df[target_col], order=sorted(state.df[target_col].unique()))
-    plt.title("Phân phối các nhãn")
-    plt.xlabel("Nhãn")
-    plt.ylabel("Số lượng")
+    plt.title("Labels distribution")
+    plt.xlabel("Label")
+    plt.ylabel("Count")
     plt.grid(axis="y")
     plt.tight_layout()
     plt.show()
