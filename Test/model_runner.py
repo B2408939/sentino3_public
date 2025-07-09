@@ -12,7 +12,7 @@ from state import model_hyperparams
 
 def run_models(target_col, selected_models, normalize=False, detailed=False):
     if state.df is None:
-        return "Chưa có dữ liệu!"
+        return "No data available!"
 
     try:
         X = state.df.drop(columns=[target_col])
@@ -45,7 +45,7 @@ def run_models(target_col, selected_models, normalize=False, detailed=False):
                 elif model_name == "KNN":
                     model = KNeighborsClassifier(**params_model)
                 else:
-                    results.append(f"⚠️ Không nhận diện được mô hình: {model_name}")
+                    results.append(f"Unable to recognize the model {model_name}")
                     continue
 
                 start_time = time.time()
@@ -58,7 +58,7 @@ def run_models(target_col, selected_models, normalize=False, detailed=False):
                     elapsed = time.time() - start_time
 
                     if detailed:
-                        results.append(f"\n📌 {model_name} (Train/Test)\n")
+                        results.append(f"\n{model_name} (Train/Test)\n")
                         results.append(classification_report(y_test, y_pred, zero_division=0))
                         results.append(f"(Runtime: {elapsed:.2f} sec)\n")
                         results.append("-" * 60 + "\n")
@@ -79,7 +79,7 @@ def run_models(target_col, selected_models, normalize=False, detailed=False):
                         acc = accuracy_score(y_test, y_pred)
                         fold_accs.append(acc)
                         if show_folds:
-                            results.append(f"📄 Fold {fold} - {model_name}: {acc:.2%}")
+                            results.append(f"Fold {fold} - {model_name}: {acc:.2%}")
                         if detailed:
                             y_preds_all.extend(y_pred)
                             y_tests_all.extend(y_test)
@@ -87,7 +87,7 @@ def run_models(target_col, selected_models, normalize=False, detailed=False):
                     elapsed = time.time() - start_time
 
                     if detailed:
-                        results.append(f"\n📌 {model_name} (K-Fold)\n")
+                        results.append(f"\n{model_name} (K-Fold)\n")
                         results.append(classification_report(y_tests_all, y_preds_all, zero_division=0))
                         results.append(f"(Runtime: {elapsed:.2f} sec)\n")
                         results.append("-" * 60 + "\n")
@@ -96,8 +96,8 @@ def run_models(target_col, selected_models, normalize=False, detailed=False):
                         results.append(f"{model_name} (K-Fold): {mean_acc:.2%} (Runtime: {elapsed:.2f} sec)")
 
             except Exception as model_err:
-                results.append(f"❌ {model_name} lỗi: {model_err}")
+                results.append(f"{model_name} Error: {model_err}")
 
         return "\n".join(results)
     except Exception as e:
-        return f"🔥 Lỗi: {e}"
+        return f"🔥 Error: {e}"
