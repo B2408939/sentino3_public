@@ -30,7 +30,7 @@ Folder Structure
 
 1. **Clone the repository** or download the `/Test/` folder.
 2. **Install dependencies** (if not already installed):
-3. **Run entry_point.py
+3. **Run entry_point.py**
 
 Key Features
 User-friendly Tkinter interface
