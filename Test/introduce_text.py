@@ -5,7 +5,7 @@ def show_about_frame(parent):
     frame.pack(fill=tk.BOTH, expand=True)
 
     tk.Label(frame, text="Version: 1.0", font=("Arial", 13)).pack()
-    tk.Label(frame, text="Developed by Tran Cao Anh Vo with ChatGPT", font=("Arial", 13)).pack(pady=(0, 30))
+    tk.Label(frame, text="Developed by B24 with ChatGPT", font=("Arial", 13)).pack(pady=(0, 30))
     description = (
         "Sentino3 is a simple yet powerful AutoML graphical user interface designed for students, "
         "researchers, and developers who want to explore machine learning without writing complex code. "
