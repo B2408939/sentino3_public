@@ -100,4 +100,4 @@ def run_models(target_col, selected_models, normalize=False, detailed=False):
 
         return "\n".join(results)
     except Exception as e:
-        return f"🔥 Error: {e}"
+        return f"Error: {e}"
